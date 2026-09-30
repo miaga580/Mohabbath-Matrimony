@@ -97,7 +97,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-foreground/80">
-            Got questions? We've got answers. If you can't find what you're looking for, feel free to contact our support team.
+            Got questions? We&apos;ve got answers. If you can&apos;t find what you&apos;re looking for, feel free to contact our support team.
           </p>
         </div>
 

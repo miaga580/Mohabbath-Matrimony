@@ -37,6 +37,7 @@ export default function LegalPage({ params }: { params: { slug: string } }) {
             {/* Simple component to highlight [CONFIRM:...] tags in development */}
             <ReactMarkdown
               components={{
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 p: ({node, ...props}) => {
                   if (typeof props.children === 'string' && props.children.includes('[CONFIRM:')) {
                     const parts = props.children.split(/(\[CONFIRM:.*?\])/g);

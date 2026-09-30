@@ -13,7 +13,7 @@ export function getLegalContent(slug: string) {
   const match = frontmatterRegex.exec(fileContents);
   
   let content = fileContents;
-  let metadata: any = {};
+  const metadata: Record<string, string> = {};
   
   if (match) {
     content = fileContents.replace(match[0], '');

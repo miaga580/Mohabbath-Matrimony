@@ -18,7 +18,7 @@ export default function ForFamilies() {
           <div className="bg-surface p-8 rounded-3xl">
             <h2 className="text-2xl font-bold mb-4">Create on Behalf</h2>
             <p className="text-foreground/70">
-              Parents, siblings, and relatives can easily create and manage a profile for their loved ones. Simply select "Son", "Daughter", "Brother", or "Sister" during sign-up.
+              Parents, siblings, and relatives can easily create and manage a profile for their loved ones. Simply select &quot;Son&quot;, &quot;Daughter&quot;, &quot;Brother&quot;, or &quot;Sister&quot; during sign-up.
             </p>
           </div>
           <div className="bg-surface p-8 rounded-3xl">

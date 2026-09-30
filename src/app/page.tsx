@@ -79,7 +79,7 @@ export default function Home() {
               The Journey to <br/> <span className="italic font-light">Forever.</span>
             </h2>
             <p className="text-foreground/50 font-light text-lg lg:text-xl max-w-md leading-relaxed lg:pb-3">
-              A refined, effortless experience designed to honor your family's traditions.
+              A refined, effortless experience designed to honor your family&apos;s traditions.
             </p>
           </div>
 

@@ -22,7 +22,7 @@ export default function AboutUs() {
             
             <h2>Our Story</h2>
             <p>
-              Mohabbath was born out of a simple observation: finding a life partner in the modern world shouldn't mean compromising on traditional values. Our founders, deeply rooted in the cultural fabric of Kerala, realised that existing platforms either lacked the necessary privacy controls for families or ignored the nuanced religious and cultural preferences that matter most to the Muslim community. We set out to build a platform where trust is the foundation, and technology acts as a bridge between tradition and modern matchmaking.
+              Mohabbath was born out of a simple observation: finding a life partner in the modern world shouldn&apos;t mean compromising on traditional values. Our founders, deeply rooted in the cultural fabric of Kerala, realised that existing platforms either lacked the necessary privacy controls for families or ignored the nuanced religious and cultural preferences that matter most to the Muslim community. We set out to build a platform where trust is the foundation, and technology acts as a bridge between tradition and modern matchmaking.
             </p>
 
             <h2>Our Core Values</h2>

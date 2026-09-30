@@ -13,7 +13,7 @@ export default function HowItWorks() {
             How Mohabbath <span className="italic font-light">Works.</span>
           </h1>
           <p className="text-xl text-foreground/60 font-light leading-relaxed max-w-2xl">
-            We've made it simple to find your life partner while maintaining the highest standards of privacy and tradition.
+            We&apos;ve made it simple to find your life partner while maintaining the highest standards of privacy and tradition.
           </p>
         </div>
 

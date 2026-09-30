@@ -44,7 +44,7 @@ export default function PrivacyAndSafety() {
               <span className="text-brand-text">👁️</span> Hide My Profile
             </h2>
             <p className="text-foreground/70 mb-4">
-              Need a break? You can temporarily hide your profile at any time. When hidden, you won't appear in Discovery or Search results, giving you the space you need without deleting your account.
+              Need a break? You can temporarily hide your profile at any time. When hidden, you won&apos;t appear in Discovery or Search results, giving you the space you need without deleting your account.
             </p>
           </section>
 
