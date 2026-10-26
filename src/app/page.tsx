@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "@/lib/siteConfig";
+
+export const metadata: Metadata = {
+  title: "Mohabbath Matrimony | Muslim Matrimony for Families",
+  description: "An exclusive matrimony platform for Muslim families seeking marriage alliances with privacy controls, dignity, and verified profiles.",
+  alternates: {
+    canonical: siteConfig.websiteUrl,
+  },
+  openGraph: {
+    title: "Mohabbath Matrimony | Muslim Matrimony for Families",
+    description: "An exclusive matrimony platform for Muslim families seeking marriage alliances with privacy controls, dignity, and verified profiles.",
+    url: siteConfig.websiteUrl,
+  },
+};
 
 export default function Home() {
   return (
@@ -12,24 +27,35 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           {/* Left: Text Content */}
           <div className="flex-1 max-w-2xl text-center lg:text-left">
-            <div className="fade-in-up inline-flex items-center gap-4 mb-10 justify-center lg:justify-start">
+            <div className="fade-in-up inline-flex items-center gap-4 mb-8 justify-center lg:justify-start">
               <span className="w-12 h-[1px] bg-brand-gold/50"></span>
               <span className="font-sans text-xs tracking-[0.3em] text-brand-gold uppercase shimmer">The Premium Matrimony Experience</span>
             </div>
 
-            <h1 className="fade-in-up delay-100 font-serif text-5xl md:text-6xl lg:text-7xl font-medium tracking-[-0.02em] leading-[1.08] mb-10">
+            <h1 className="fade-in-up delay-100 font-serif text-5xl md:text-6xl lg:text-7xl font-medium tracking-[-0.02em] leading-[1.08] mb-8">
               Find Your Match with <br className="hidden lg:block"/>
               <span className="italic text-brand-gold font-light">Trust & Tradition.</span>
             </h1>
 
-            <p className="fade-in-up delay-200 text-lg lg:text-xl text-white/60 mb-14 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-              An exclusive matrimony platform for Muslim families. Built for absolute privacy, driven by uncompromising values.
+            {/* Mandatory Wording: Matrimony platform notice */}
+            <div className="fade-in-up delay-150 inline-block bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/15 text-xs text-white/90 mb-8 font-light tracking-wide">
+              Mohabbath is a matrimony platform for families seeking marriage. It is not a dating app.
+            </div>
+
+            <p className="fade-in-up delay-200 text-lg lg:text-xl text-white/60 mb-12 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
+              An exclusive matrimony platform for Muslim families. Built for privacy controls, driven by uncompromising values.
             </p>
 
-            <div className="fade-in-up delay-300 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
-              <Link href="#download" className="group relative inline-flex items-center justify-center bg-gold-gradient text-black px-10 py-4 rounded-full font-medium tracking-widest text-sm uppercase transition-all duration-700 hover:shadow-[0_0_40px_rgba(254,238,140,0.35)] hover:-translate-y-1">
-                Get the App
-              </Link>
+            <div className="fade-in-up delay-300 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center">
+              {siteConfig.appLive && siteConfig.playStoreUrl ? (
+                <a href={siteConfig.playStoreUrl} target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center bg-gold-gradient text-black px-10 py-4 rounded-full font-medium tracking-widest text-sm uppercase transition-all duration-700 hover:shadow-[0_0_40px_rgba(254,238,140,0.35)] hover:-translate-y-1">
+                  Get the App
+                </a>
+              ) : (
+                <span className="inline-flex items-center justify-center bg-brand-gold/20 text-brand-gold border border-brand-gold/40 px-8 py-3.5 rounded-full font-medium tracking-widest text-xs uppercase">
+                  Android & iOS Apps Under Development
+                </span>
+              )}
               <Link href="/how-it-works" className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-widest text-white/70 hover:text-white transition-colors duration-500 border border-white/20 rounded-full hover:bg-white/5">
                 Discover How →
               </Link>
@@ -56,9 +82,9 @@ export default function Home() {
       <section className="py-20 bg-surface border-b border-foreground/[0.04]">
         <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
-            { icon: "✓", title: "100% Verified Profiles", sub: "Live selfie verified" },
-            { icon: "🔒", title: "Absolute Privacy", sub: "You control your digital footprint" },
-            { icon: "🛡️", title: "Discreet & Secure", sub: "End-to-end safe environment" },
+            { icon: "✓", title: "Selfie-verified profiles", sub: "Live selfie verification" },
+            { icon: "🔒", title: "Privacy controls", sub: "You control your digital footprint" },
+            { icon: "🛡️", title: "Secure by design", sub: "Discreet and respectful environment" },
           ].map((badge, i) => (
             <div key={i} className="flex items-center gap-5 group">
               <span className="text-3xl w-14 h-14 rounded-2xl bg-brand-text/10 flex items-center justify-center flex-shrink-0 transition-transform duration-500 group-hover:scale-110">{badge.icon}</span>
@@ -110,7 +136,7 @@ export default function Home() {
               <span className="text-7xl font-serif text-brand-text/30 font-light block mb-4 transition-colors duration-500 group-hover:text-brand-text/80">02</span>
               <h3 className="font-serif text-3xl mb-4 font-medium">Discover Matches</h3>
               <p className="text-foreground/60 font-light leading-relaxed text-lg">
-                Browse meticulously curated recommendations tailored to your values. Use our advanced premium filters to find the exact alignment you seek.
+                Browse curated recommendations tailored to your values. Use our refined search filters to find meaningful alignment.
               </p>
             </div>
           </div>
@@ -121,7 +147,7 @@ export default function Home() {
               <span className="text-7xl font-serif text-brand-text/30 font-light block mb-4 transition-colors duration-500 group-hover:text-brand-text/80">03</span>
               <h3 className="font-serif text-3xl mb-4 font-medium">Connect Securely</h3>
               <p className="text-foreground/60 font-light leading-relaxed text-lg">
-                Send proposals and engage in meaningful dialogue. Your contact details and photographs remain entirely under your exclusive control.
+                Send proposals and engage in extended messaging. Your contact details and photographs remain entirely under your exclusive control.
               </p>
             </div>
             <div className="md:w-1/2 order-1 md:order-2 flex justify-center">
@@ -133,7 +159,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Download CTA ── */}
+      {/* ── Coming Soon Download Banner ── */}
       <section id="download" className="py-32 lg:py-40 relative overflow-hidden flex items-center justify-center min-h-[80vh]">
         <div className="absolute inset-0 bg-hero-gradient"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -144,16 +170,39 @@ export default function Home() {
           <h2 className="font-serif text-5xl lg:text-7xl font-medium mb-10 text-white tracking-tight leading-[1.1]">
             Begin Your <br/> <span className="italic font-light text-brand-gold">Beautiful Story.</span>
           </h2>
-          <p className="text-xl text-white/60 mb-16 font-light max-w-2xl mx-auto leading-relaxed">
-            Download Mohabbath today and join thousands of families finding their perfect match with dignity, privacy, and trust.
+          <p className="text-xl text-white/60 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+            Mohabbath mobile applications are currently under development for Android and iOS. Built for families seeking compatible marriage alliances with dignity, privacy, and trust.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="w-full sm:w-auto bg-gold-gradient text-black px-14 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:shadow-[0_0_40px_rgba(254,238,140,0.3)] transition-all duration-700 transform hover:-translate-y-1">
-              App Store
-            </button>
-            <button className="w-full sm:w-auto bg-transparent border border-white/20 text-white px-14 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:bg-white/5 transition-all duration-700 transform hover:-translate-y-1">
-              Google Play
-            </button>
+            {siteConfig.appLive && siteConfig.appStoreUrl ? (
+              <a
+                href={siteConfig.appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-gold-gradient text-black px-14 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:shadow-[0_0_40px_rgba(254,238,140,0.3)] transition-all duration-700"
+              >
+                App Store
+              </a>
+            ) : (
+              <span className="w-full sm:w-auto bg-white/10 border border-white/20 text-white/80 px-10 py-4 rounded-full font-medium tracking-widest uppercase text-xs">
+                App Store &bull; Under Development
+              </span>
+            )}
+
+            {siteConfig.appLive && siteConfig.playStoreUrl ? (
+              <a
+                href={siteConfig.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-transparent border border-white/20 text-white px-14 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:bg-white/5 transition-all duration-700"
+              >
+                Google Play
+              </a>
+            ) : (
+              <span className="w-full sm:w-auto bg-white/10 border border-white/20 text-white/80 px-10 py-4 rounded-full font-medium tracking-widest uppercase text-xs">
+                Google Play &bull; Under Development
+              </span>
+            )}
           </div>
         </div>
       </section>

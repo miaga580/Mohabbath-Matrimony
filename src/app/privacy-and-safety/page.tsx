@@ -1,6 +1,17 @@
-export const metadata = {
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/siteConfig';
+
+export const metadata: Metadata = {
   title: 'Privacy & Safety | Mohabbath Matrimony',
-  description: 'Learn how Mohabbath protects your privacy and keeps our community safe.',
+  description: 'Learn how Mohabbath protects your privacy and keeps our matrimony community safe and dignified.',
+  alternates: {
+    canonical: `${siteConfig.websiteUrl}/privacy-and-safety`,
+  },
+  openGraph: {
+    title: 'Privacy & Safety | Mohabbath Matrimony',
+    description: 'Learn how Mohabbath protects your privacy and keeps our community safe.',
+    url: `${siteConfig.websiteUrl}/privacy-and-safety`,
+  },
 };
 
 export default function PrivacyAndSafety() {
@@ -17,7 +28,7 @@ export default function PrivacyAndSafety() {
         <div className="space-y-12">
           <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <span className="text-brand-text">🔒</span> Photo Visibility Options
+              <span className="text-brand-text">🔒</span> Photo Visibility Controls
             </h2>
             <p className="text-foreground/70 mb-4">
               Your main profile photo is visible to all members, but you have complete control over your additional photos. You can set them to be visible to:

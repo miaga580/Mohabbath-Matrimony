@@ -1,6 +1,17 @@
-export const metadata = {
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/siteConfig';
+
+export const metadata: Metadata = {
   title: 'How It Works | Mohabbath Matrimony',
-  description: 'Learn how to create a profile, discover matches, and connect safely on Mohabbath.',
+  description: 'Learn how to create a profile, discover matches, and connect safely with verified Muslim families on Mohabbath.',
+  alternates: {
+    canonical: `${siteConfig.websiteUrl}/how-it-works`,
+  },
+  openGraph: {
+    title: 'How It Works | Mohabbath Matrimony',
+    description: 'Learn how to create a profile, discover matches, and connect safely on Mohabbath.',
+    url: `${siteConfig.websiteUrl}/how-it-works`,
+  },
 };
 
 export default function HowItWorks() {
@@ -13,7 +24,7 @@ export default function HowItWorks() {
             How Mohabbath <span className="italic font-light">Works.</span>
           </h1>
           <p className="text-xl text-foreground/60 font-light leading-relaxed max-w-2xl">
-            We&apos;ve made it simple to find your life partner while maintaining the highest standards of privacy and tradition.
+            We&apos;ve made it simple to find your life partner while maintaining privacy controls and honoring family tradition.
           </p>
         </div>
 
@@ -50,7 +61,7 @@ export default function HowItWorks() {
               <span className="text-6xl font-serif text-brand-text/30 font-light block mb-4 group-hover:text-brand-text/70 transition-colors duration-500">02</span>
               <h2 className="text-3xl font-serif font-medium mb-5">Verify Your Identity</h2>
               <p className="text-foreground/60 font-light leading-relaxed text-lg">
-                Build trust with other members by completing our live selfie verification. This confirms you are the person in your profile photos and helps keep our community safe.
+                Build trust with other members by completing our live selfie verification. This confirms you are the person in your profile photos and helps keep our community safe and authentic.
               </p>
             </div>
           </div>

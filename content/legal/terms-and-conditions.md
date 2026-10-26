@@ -5,7 +5,7 @@ version: "1.1"
 lastUpdated: "29 September 2026"
 ---
 
-These Terms and Conditions ("Terms") govern your use of the Mohabbath mobile application and the website mohabbathmatrimony.com (together, the "Platform"), operated by Miaga Technologies LLP, a Limited Liability Partnership registered in India, with its office at 3F, Harvard, Skyline Ivy League, Edachira, Kakkanad, Kochi, Kerala – 682030 ("we", "us", "our"). By creating an account or using the Platform, you agree to these Terms. If you do not agree, please do not use the Platform.
+These Terms and Conditions ("Terms") govern your use of the Mohabbath mobile application and the website mohabbathmatrimony.com (together, the "Platform"), operated by Miaga Technologies LLP, a Limited Liability Partnership registered in India, with its office at 3F, Harvard, Skyline, Edachira, Kakkanad, Kochi, Kerala – 682030 ("we", "us", "our"). By creating an account or using the Platform, you agree to these Terms. If you do not agree, please do not use the Platform.
 
 ## 1. Eligibility
 
@@ -78,5 +78,5 @@ We may update these Terms from time to time. The updated version will be posted 
 
 ## 15. Contact and grievances
 
-For questions, complaints or to report a violation, write to miagatechnologies5@gmail.com or call +91 85901 85661. Our Grievance Officer is, reachable at the same email address, and we will acknowledge complaints within 24 hours and try to resolve them within 15 days.
+For questions, complaints or to report a violation, write to info@mohabbathmatrimony.com or call +91 85901 85661. Our Grievance Officer is Mithilaj Abdul, reachable at the same email address, and we will acknowledge complaints within 24 hours and try to resolve them within 15 days.
 

@@ -1,20 +1,31 @@
-export const metadata = {
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/siteConfig';
+
+export const metadata: Metadata = {
   title: 'Features | Mohabbath Matrimony',
-  description: 'Explore the features that make Mohabbath the best platform for finding your life partner.',
+  description: 'Explore privacy controls, faith alignment, and selfie verification features designed for Muslim families on Mohabbath.',
+  alternates: {
+    canonical: `${siteConfig.websiteUrl}/features`,
+  },
+  openGraph: {
+    title: 'Features | Mohabbath Matrimony',
+    description: 'Explore privacy controls, faith alignment, and selfie verification features designed for Muslim families on Mohabbath.',
+    url: `${siteConfig.websiteUrl}/features`,
+  },
 };
 
 export default function Features() {
   const features = [
     {
       title: "Family-Friendly Profiles",
-      description: "Profiles can be elegantly managed by the individual or by parents and siblings. All communication options respect family involvement and tradition."
+      description: "Profiles can be managed by the candidate or by parents and siblings. All communication options respect family involvement and tradition."
     },
     {
       title: "Detailed Faith Alignment",
-      description: "Find a partner who perfectly shares your religious values with nuanced filters for Namaz frequency, Quran reading, and Zakat."
+      description: "Find a partner who shares your religious values with nuanced filters for Namaz frequency, Quran reading, Ramadan fasting, and Zakat."
     },
     {
-      title: "Uncompromising Privacy",
+      title: "Privacy Controls",
       description: "You decide precisely who sees your photographs. Choose between All Members, Premium Members, or strictly Members You Approve."
     },
     {
@@ -22,12 +33,12 @@ export default function Features() {
       description: "Curate profiles you appreciate to your Shortlist and review them later in privacy with your family before initiating a proposal."
     },
     {
-      title: "Identity Verification",
-      description: "Our live selfie match feature ensures that profiles are genuine, providing you and your family with absolute peace of mind."
+      title: "Selfie Verification",
+      description: "Our live selfie check feature ensures that profiles correspond to genuine applicants, supporting safety and authenticity."
     },
     {
       title: "Secure Dialogue",
-      description: "Engage in meaningful conversations within a fully secure environment. Chat is only enabled after mutual proposal acceptance."
+      description: "Engage in meaningful conversations within a respectful environment. Chat is only enabled after mutual proposal acceptance."
     }
   ];
 
@@ -40,7 +51,7 @@ export default function Features() {
             Designed for <span className="italic font-light">Elegance</span> & Trust.
           </h1>
           <p className="text-xl text-foreground/60 font-light leading-relaxed max-w-2xl">
-            Every feature is meticulously crafted to help you find the perfect match, built with the values of the Muslim community in mind.
+            Every feature is crafted to help Muslim families connect for marriage with dignity, safety, and cultural respect.
           </p>
         </div>
 

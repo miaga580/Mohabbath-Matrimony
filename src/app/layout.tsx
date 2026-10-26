@@ -1,26 +1,34 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Noto_Sans_Malayalam } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/lib/siteConfig";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const notoMalayalam = Noto_Sans_Malayalam({ subsets: ["malayalam"], variable: "--font-noto-malayalam" });
 
 export const metadata: Metadata = {
-  title: "Mohabbath Matrimony | Find Your Perfect Match with Trust & Tradition",
-  description: "The trusted matrimony platform for Muslim families. Connect with verified profiles and find your perfect match today.",
+  metadataBase: new URL(siteConfig.websiteUrl),
+  title: {
+    default: "Mohabbath Matrimony | Muslim Matrimony for Families",
+    template: "%s | Mohabbath Matrimony",
+  },
+  description: "The trusted matrimony platform for Muslim families seeking marriage alliances with privacy, dignity, and verified profiles.",
+  alternates: {
+    canonical: siteConfig.websiteUrl,
+  },
   openGraph: {
-    title: "Mohabbath Matrimony",
-    description: "The trusted matrimony platform for Muslim families.",
-    url: "https://www.mohabbathmatrimony.com",
-    siteName: "Mohabbath Matrimony",
+    title: "Mohabbath Matrimony | Muslim Matrimony for Families",
+    description: "The trusted matrimony platform for Muslim families seeking marriage alliances with privacy, dignity, and verified profiles.",
+    url: siteConfig.websiteUrl,
+    siteName: siteConfig.brandName,
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohabbath Matrimony",
-    description: "The trusted matrimony platform for Muslim families.",
+    title: "Mohabbath Matrimony | Muslim Matrimony for Families",
+    description: "The trusted matrimony platform for Muslim families seeking marriage alliances with privacy, dignity, and verified profiles.",
   },
 };
 
@@ -32,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} ${notoMalayalam.variable} antialiased min-h-screen flex flex-col`}>
-        {/* Header Placeholder */}
+        {/* Header */}
         <header className="sticky top-0 z-50 w-full bg-background/70 backdrop-blur-xl border-b border-foreground/[0.03]">
           <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-12">
             <a href="/" className="flex items-center gap-3 group">
@@ -42,13 +50,25 @@ export default function RootLayout({
             <nav className="hidden md:flex gap-8 items-center">
               <a href="/" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">Home</a>
               <a href="/how-it-works" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">How it Works</a>
-              <a href="/premium" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">Premium</a>
+              <a href="/features" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">Features</a>
+              <a href="/premium" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">Pricing & Premium</a>
               <a href="/contact" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">Contact</a>
             </nav>
             <div className="flex items-center gap-4">
-              <button className="hidden md:inline-flex bg-foreground text-background px-6 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-brand-text hover:text-white transition-all duration-300">
-                Download App
-              </button>
+              {siteConfig.appLive && siteConfig.playStoreUrl ? (
+                <a
+                  href={siteConfig.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden md:inline-flex bg-foreground text-background px-6 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-brand-text hover:text-white transition-all duration-300"
+                >
+                  Download App
+                </a>
+              ) : (
+                <span className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase bg-brand-gold/20 text-brand-text border border-brand-gold/40">
+                  App Under Development
+                </span>
+              )}
             </div>
           </div>
         </header>
@@ -57,13 +77,16 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* Footer Placeholder */}
+        {/* Footer */}
         <footer className="border-t border-foreground/[0.03] bg-surface py-20 mt-auto">
           <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
             <div className="md:col-span-1">
-              <span className="font-serif text-2xl font-medium tracking-tight text-brand-text block mb-6">MOHABBATH</span>
-              <p className="text-sm text-foreground/60 leading-relaxed font-light">
+              <span className="font-serif text-2xl font-medium tracking-tight text-brand-text block mb-4">MOHABBATH</span>
+              <p className="text-sm text-foreground/60 leading-relaxed font-light mb-4">
                 The trusted matrimony platform for Muslim families. Built on trust, designed for tradition.
+              </p>
+              <p className="text-xs text-foreground/50 font-light leading-relaxed">
+                Mohabbath is a matrimony platform for families seeking marriage alliances. It is not a dating app.
               </p>
             </div>
             <div>
@@ -71,15 +94,16 @@ export default function RootLayout({
               <ul className="space-y-4 text-sm font-light text-foreground/60">
                 <li><a href="/about-us" className="hover:text-brand-text transition-colors duration-300">About Us</a></li>
                 <li><a href="/contact" className="hover:text-brand-text transition-colors duration-300">Contact Us</a></li>
+                <li><a href="/faq" className="hover:text-brand-text transition-colors duration-300">Frequently Asked Questions</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-sans text-sm font-semibold tracking-widest uppercase mb-6 text-foreground/80">Legal</h3>
+              <h3 className="font-sans text-sm font-semibold tracking-widest uppercase mb-6 text-foreground/80">Legal & Policies</h3>
               <ul className="space-y-4 text-sm font-light text-foreground/60">
                 <li><a href="/terms-and-conditions" className="hover:text-brand-text transition-colors duration-300">Terms & Conditions</a></li>
                 <li><a href="/privacy-policy" className="hover:text-brand-text transition-colors duration-300">Privacy Policy</a></li>
-                <li><a href="/refund-and-cancellation-policy" className="hover:text-brand-text transition-colors duration-300">Refund Policy</a></li>
-                <li><a href="/shipping-and-delivery" className="hover:text-brand-text transition-colors duration-300">Shipping & Delivery</a></li>
+                <li><a href="/refund-and-cancellation-policy" className="hover:text-brand-text transition-colors duration-300">Refund & Cancellation Policy</a></li>
+                <li><a href="/shipping-and-delivery" className="hover:text-brand-text transition-colors duration-300">Shipping & Delivery Policy</a></li>
               </ul>
             </div>
             <div>
@@ -91,9 +115,33 @@ export default function RootLayout({
               </ul>
             </div>
           </div>
-          <div className="container mx-auto px-6 lg:px-12 mt-16 pt-8 border-t border-foreground/[0.03] text-sm text-foreground/40 font-light flex flex-col md:flex-row justify-between items-center gap-4">
+
+          {/* Business & Registered Office Information */}
+          <div className="container mx-auto px-6 lg:px-12 mt-12 pt-8 border-t border-foreground/[0.05] text-xs text-foreground/60 font-light grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div>
+              <p className="font-medium text-foreground/80 mb-1">Registered Entity</p>
+              <p>{siteConfig.legalName}</p>
+              <p className="mt-1">LLP ID: {siteConfig.llpNumber}</p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/80 mb-1">Registered Office</p>
+              <p>{siteConfig.address}</p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/80 mb-1">Customer Support</p>
+              <p>Email: <a href={`mailto:${siteConfig.supportEmail}`} className="hover:underline">{siteConfig.supportEmail}</a></p>
+              <p className="mt-1">Phone: <a href={`tel:${siteConfig.phonePrimary}`} className="hover:underline">{siteConfig.phonePrimary}</a></p>
+            </div>
+            <div>
+              <p className="font-medium text-foreground/80 mb-1">Working Hours</p>
+              <p>{siteConfig.businessHours}</p>
+              <p className="mt-1">Grievance Officer: {siteConfig.grievanceOfficer}</p>
+            </div>
+          </div>
+
+          <div className="container mx-auto px-6 lg:px-12 mt-10 pt-6 border-t border-foreground/[0.03] text-sm text-foreground/40 font-light flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col gap-2 md:gap-1 text-center md:text-left">
-              <span>&copy; {new Date().getFullYear()} Miaga Technologies LLP. All rights reserved.</span>
+              <span>&copy; 2026 {siteConfig.legalName}. All rights reserved.</span>
               <span>
                 Managed and developed by{' '}
                 <a href="https://www.zartek.in/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-text transition-colors underline decoration-foreground/20 underline-offset-2">

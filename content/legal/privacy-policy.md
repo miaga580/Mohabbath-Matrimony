@@ -70,7 +70,7 @@ We use reasonable technical and organisational safeguards to protect your inform
 
 ## 8. Your rights
 
-You may ask us to access, correct, update or delete your personal information, to withdraw your consent, or to nominate another person to exercise your rights in the event of your death or incapacity. You can update most details in the app, delete your account from the app settings, or write to us at miagatechnologies5@gmail.com. We will respond within a reasonable time as the law requires.
+You may ask us to access, correct, update or delete your personal information, to withdraw your consent, or to nominate another person to exercise your rights in the event of your death or incapacity. You can update most details in the app, delete your account from the app settings, or write to us at info@mohabbathmatrimony.com. We will respond within a reasonable time as the law requires.
 
 ## 9. Children
 
@@ -90,6 +90,6 @@ We may update this Policy from time to time. The latest version will always be o
 
 ## 13. Grievance Officer and contact
 
-If you have any concern or complaint about your personal information, contact our Grievance Officer,, at Miaga Technologies LLP, 3F, Harvard, Skyline Ivy League, Edachira, Kakkanad, Kochi, Kerala – 682030. Email: miagatechnologies5@gmail.com. Phone: +91 85901 85661.
+If you have any concern or complaint about your personal information, contact our Grievance Officer, Mithilaj Abdul, at Miaga Technologies LLP, 3F, Harvard, Skyline, Edachira, Kakkanad, Kochi, Kerala – 682030. Email: info@mohabbathmatrimony.com. Phone: +91 85901 85661.
 
 

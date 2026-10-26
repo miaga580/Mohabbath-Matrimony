@@ -37,7 +37,7 @@ We do not give refunds for:
 
 ## 5. How to request a refund
 
-Email miagatechnologies5@gmail.com within 7 days of the payment with your registered mobile number, the date of payment, the amount, and the transaction ID or a screenshot of the payment. We will review your request and reply within 3 to 5 working days.
+Email info@mohabbathmatrimony.com within 7 days of the payment with your registered mobile number, the date of payment, the amount, and the transaction ID or a screenshot of the payment. We will review your request and reply within 3 to 5 working days.
 
 ## 6. Refund timeline
 
@@ -49,4 +49,4 @@ If you paid through the Apple App Store or Google Play, refund requests are hand
 
 ## 8. Contact us
 
-Email miagatechnologies5@gmail.com or call +91 85901 85661.
+Email info@mohabbathmatrimony.com or call +91 85901 85661.

@@ -1,8 +1,17 @@
 import { Metadata } from 'next';
+import { siteConfig } from '@/lib/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions | Mohabbath Matrimony',
-  description: 'Find answers to common questions about Mohabbath, profile creation, privacy, and more.',
+  description: 'Find answers to common questions about Mohabbath, profile creation, selfie verification, privacy, and membership plans.',
+  alternates: {
+    canonical: `${siteConfig.websiteUrl}/faq`,
+  },
+  openGraph: {
+    title: 'Frequently Asked Questions | Mohabbath Matrimony',
+    description: 'Find answers to common questions about Mohabbath matrimony platform.',
+    url: `${siteConfig.websiteUrl}/faq`,
+  },
 };
 
 export default function FAQ() {
@@ -13,7 +22,7 @@ export default function FAQ() {
     },
     {
       q: "Which countries are supported?",
-      a: "Currently, Mohabbath is designed for Muslim families  countries (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman)."
+      a: "Currently, Mohabbath is designed for Muslim families in India and GCC countries (UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman)."
     },
     {
       q: "Can I create a profile for my son, daughter, or sibling?",
@@ -21,7 +30,7 @@ export default function FAQ() {
     },
     {
       q: "How does identity verification work?",
-      a: "To ensure a safe community, we offer a live selfie verification feature. You will be asked to take a live selfie which is matched against your profile photo. Once verified, your profile receives a trusted verification badge."
+      a: "To ensure an authentic community, we offer a live selfie verification feature. You will be asked to take a live selfie which is matched against your profile photo. Once verified, your profile receives a selfie-verified badge."
     },
     {
       q: "Who can see my profile photos?",
@@ -45,7 +54,7 @@ export default function FAQ() {
     },
     {
       q: "What are the benefits of a Premium membership?",
-      a: "Premium members enjoy unlimited messaging, the ability to view verified phone numbers (upon mutual consent), insights into who visited or shortlisted their profile, and profile boosts for higher visibility."
+      a: "Premium members enjoy extended messaging, the ability to view verified phone numbers (upon mutual consent), insights into who visited or shortlisted their profile, and profile boosts for higher visibility."
     },
     {
       q: "How do I shortlist a profile to show my family?",

@@ -1,6 +1,17 @@
-export const metadata = {
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/siteConfig';
+
+export const metadata: Metadata = {
   title: 'For Families | Mohabbath Matrimony',
-  description: 'Create a profile for your son, daughter, brother, or sister on Mohabbath.',
+  description: 'Create and manage a matrimonial profile for your son, daughter, brother, or sister on Mohabbath.',
+  alternates: {
+    canonical: `${siteConfig.websiteUrl}/for-families`,
+  },
+  openGraph: {
+    title: 'For Families | Mohabbath Matrimony',
+    description: 'Create and manage a matrimonial profile for your son, daughter, brother, or sister on Mohabbath.',
+    url: `${siteConfig.websiteUrl}/for-families`,
+  },
 };
 
 export default function ForFamilies() {
@@ -30,13 +41,24 @@ export default function ForFamilies() {
         </div>
 
         <div className="text-center bg-brand-purple text-white p-12 rounded-3xl">
-          <h2 className="font-serif text-3xl font-bold mb-6">Ready to find a match for your loved one?</h2>
+          <h2 className="font-serif text-3xl font-bold mb-6">Ready to find an alliance for your loved one?</h2>
           <p className="mb-8 text-white/80 max-w-xl mx-auto">
-            Join thousands of Muslim families who trust Mohabbath to find the perfect alliance based on faith, values, and community.
+            Mohabbath provides an alliance platform rooted in faith, cultural values, and privacy for Muslim families.
           </p>
-          <button className="bg-brand-gold text-brand-dark px-8 py-4 rounded-full font-bold hover:bg-white transition-colors">
-            Download the App Now
-          </button>
+          {siteConfig.appLive && siteConfig.playStoreUrl ? (
+            <a
+              href={siteConfig.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-gold text-brand-dark px-8 py-4 rounded-full font-bold hover:bg-white transition-colors"
+            >
+              Download the App Now
+            </a>
+          ) : (
+            <span className="inline-block bg-white/20 text-white border border-white/30 px-8 py-3.5 rounded-full font-medium tracking-widest text-xs uppercase">
+              Android & iOS Apps Under Development
+            </span>
+          )}
         </div>
       </div>
     </div>

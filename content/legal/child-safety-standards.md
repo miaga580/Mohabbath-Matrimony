@@ -39,11 +39,11 @@ If you see a profile, photograph or message that may involve a child, please rep
 
 **Child Safety Point of Contact:**
 
-Email: miagatechnologies5@gmail.com (please put "Child Safety" in the subject line)
+Email: info@mohabbathmatrimony.com (please put "Child Safety" in the subject line)
 
 Phone: +91 85901 85661
 
-Miaga Technologies LLP, 3F, Harvard, Skyline Ivy League, Edachira, Kakkanad, Kochi, Kerala – 682030
+Miaga Technologies LLP, 3F, Harvard, Skyline, Edachira, Kakkanad, Kochi, Kerala – 682030
 
 ## 6. If a child is in danger
 

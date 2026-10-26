@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs';
 import path from 'path';
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/siteConfig';
 
 export async function generateStaticParams() {
   const legalDir = path.join(process.cwd(), 'content', 'legal');
@@ -12,6 +14,34 @@ export async function generateStaticParams() {
     .map(file => ({
       slug: file.replace(/\.md$/, ''),
     }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const data = getLegalContent(params.slug);
+  if (!data) {
+    return {
+      title: 'Not Found | Mohabbath Matrimony',
+    };
+  }
+
+  const title = `${data.metadata.title} | Mohabbath Matrimony`;
+  const url = `${siteConfig.websiteUrl}/${params.slug}`;
+  const description = `${data.metadata.title} for Mohabbath Matrimony, operated by ${siteConfig.legalName}.`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: siteConfig.brandName,
+      type: 'article',
+    },
+  };
 }
 
 export default function LegalPage({ params }: { params: { slug: string } }) {
@@ -34,30 +64,30 @@ export default function LegalPage({ params }: { params: { slug: string } }) {
         </div>
         
         <div className="prose prose-lg prose-slate dark:prose-invert max-w-none prose-headings:font-serif prose-headings:font-medium prose-headings:text-brand-text prose-a:text-brand-text hover:prose-a:text-brand-text/80 prose-p:font-light prose-p:leading-relaxed prose-li:font-light">
-            {/* Simple component to highlight [CONFIRM:...] tags in development */}
-            <ReactMarkdown
-              components={{
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                p: ({node, ...props}) => {
-                  if (typeof props.children === 'string' && props.children.includes('[CONFIRM:')) {
-                    const parts = props.children.split(/(\[CONFIRM:.*?\])/g);
-                    return (
-                      <p>
-                        {parts.map((part, i) => 
-                          part.startsWith('[CONFIRM:') ? (
-                            <span key={i} className="bg-yellow-200 text-yellow-900 font-bold px-1 rounded">{part}</span>
-                          ) : part
-                        )}
-                      </p>
-                    );
-                  }
-                  return <p {...props} />;
+          {/* Simple component to highlight [CONFIRM:...] tags in development */}
+          <ReactMarkdown
+            components={{
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              p: ({node, ...props}) => {
+                if (typeof props.children === 'string' && props.children.includes('[CONFIRM:')) {
+                  const parts = props.children.split(/(\[CONFIRM:.*?\])/g);
+                  return (
+                    <p>
+                      {parts.map((part, i) => 
+                        part.startsWith('[CONFIRM:') ? (
+                          <span key={i} className="bg-yellow-200 text-yellow-900 font-bold px-1 rounded">{part}</span>
+                        ) : part
+                      )}
+                    </p>
+                  );
                 }
-              }}
-            >
-              {data.content}
-            </ReactMarkdown>
-          </div>
+                return <p {...props} />;
+              }
+            }}
+          >
+            {data.content}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   );
