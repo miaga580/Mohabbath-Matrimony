@@ -14,7 +14,15 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate successful submission and confirmation feedback
+    const subject = encodeURIComponent(`Contact Form Enquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Full Name: ${formData.name}\n` +
+      `Registered Mobile: ${formData.mobile}\n` +
+      `Email Address: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    // Open email client with pre-filled content to info@mohabbathmatrimony.com
+    window.location.href = `mailto:${siteConfig.supportEmail}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -98,7 +106,7 @@ export default function Contact() {
                 </div>
                 <h3 className="font-serif text-2xl font-medium text-brand-text">Thank You</h3>
                 <p className="text-foreground/70 text-sm font-light leading-relaxed">
-                  Your message has been received. Our team will review your enquiry and get back to you within 2 working days.
+                  Your email client has been opened with your enquiry pre-filled to <span className="font-medium text-brand-text">{siteConfig.supportEmail}</span>. Once sent, our team will review and reply within 2 working days.
                 </p>
                 <button
                   type="button"

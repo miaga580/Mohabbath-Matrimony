@@ -13,6 +13,13 @@ export default function DataDeletion() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`Data Deletion Request - ${formData.registeredMobile}`);
+    const body = encodeURIComponent(
+      `Registered Mobile: ${formData.registeredMobile}\n` +
+      `Contact Email: ${formData.email}\n` +
+      `Reason for Request: ${formData.reason || 'Not specified'}\n`
+    );
+    window.location.href = `mailto:${siteConfig.supportEmail}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -29,18 +36,6 @@ export default function DataDeletion() {
         </div>
 
         <div className="bg-background p-8 md:p-12 rounded-3xl shadow-sm border border-foreground/5 mb-12">
-          <h2 className="text-2xl font-bold mb-4">How to delete your account in the App</h2>
-          <p className="text-foreground/70 mb-6">
-            The fastest way to delete your account and all associated data is directly through the Mohabbath mobile app:
-          </p>
-          <ol className="list-decimal list-inside space-y-3 text-foreground/80 mb-8 bg-surface p-6 rounded-2xl border">
-            <li>Open the Mohabbath app and log in to your account.</li>
-            <li>Go to the <strong>Profile</strong> tab on the bottom menu.</li>
-            <li>Tap on <strong>Settings</strong> and select <strong>Account Settings</strong>.</li>
-            <li>Tap on <strong>Manage Account</strong>.</li>
-            <li>Select <strong>Delete Account</strong> and follow the on-screen prompts to confirm.</li>
-          </ol>
-
           <h2 className="text-2xl font-bold mb-4">What happens to your data?</h2>
           <p className="text-foreground/70 mb-4">
             As stated in Section 6 of our Privacy Policy:
@@ -52,9 +47,9 @@ export default function DataDeletion() {
           </ul>
 
           <div className="border-t pt-12 mt-12">
-            <h2 className="text-2xl font-bold mb-4">Manual Data Deletion Request Form</h2>
+            <h2 className="text-2xl font-bold mb-4">Data Deletion Request Form</h2>
             <p className="text-foreground/70 mb-6">
-              If you no longer have access to the app or your mobile number, you can request account deletion using the form below. Please note that manual requests may require additional identity verification and take up to 7 working days to process.
+              To request the deletion of your account and associated personal data, please submit the request form below. Our compliance team will verify your details and process your request within 7 working days.
             </p>
             <p className="text-xs text-foreground/60 mb-8">
               Alternatively, email our grievance officer directly at{' '}
@@ -68,9 +63,9 @@ export default function DataDeletion() {
                 <div className="w-12 h-12 bg-brand-gold/20 text-brand-text rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
                   ✓
                 </div>
-                <h3 className="font-serif text-2xl font-medium text-brand-text">Request Submitted</h3>
+                <h3 className="font-serif text-2xl font-medium text-brand-text">Request Prepared</h3>
                 <p className="text-foreground/70 text-sm font-light leading-relaxed">
-                  Your data deletion request has been submitted to the compliance team. We will review the details and contact your email address within 2-3 working days for verification.
+                  Your email client has been opened with your data deletion request pre-filled to <span className="font-medium text-brand-text">{siteConfig.supportEmail}</span>. Once sent, our compliance team will process your request within 7 working days.
                 </p>
                 <button
                   type="button"
