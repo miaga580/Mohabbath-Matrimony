@@ -23,7 +23,7 @@ export interface BoostPackage {
 export const siteConfig = {
   legalName: "Miaga Technologies LLP",
   brandName: "Mohabbath",
-  address: "3F, Harvard, Skyline, Edachira, Kakkanad, Kochi, Kerala – 682030",
+  address: "3F, Harvard, Skyline, Edachira, Kakkanad, Ernakulam 682030, Kerala, India",
   phonePrimary: "+91 85901 85661",
   supportEmail: "info@mohabbathmatrimony.com",
   businessHours: "Monday–Saturday, 9:00 AM – 6:00 PM IST",

@@ -27,9 +27,12 @@ export default function DataDeletion() {
     <div className="py-24 bg-surface min-h-screen">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-12">
-          <h1 className="font-serif text-4xl lg:text-5xl font-bold text-brand-text mb-4">
+          <h1 className="font-serif text-4xl lg:text-5xl font-bold text-brand-text mb-2">
             Delete Account & Data
           </h1>
+          <p className="text-sm uppercase tracking-widest text-brand-text font-medium mb-4">
+            Mohabbath, a service of Miaga Technologies LLP
+          </p>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             You have the right to request the deletion of your account and personal data from Mohabbath at any time.
           </p>
@@ -38,13 +41,28 @@ export default function DataDeletion() {
         <div className="bg-background p-8 md:p-12 rounded-3xl shadow-sm border border-foreground/5 mb-12">
           <h2 className="text-2xl font-bold mb-4">What happens to your data?</h2>
           <p className="text-foreground/70 mb-4">
-            As stated in Section 6 of our Privacy Policy:
+            As stated in Section 7 of our Privacy Policy:
           </p>
           <ul className="list-disc list-inside text-foreground/70 space-y-2 mb-8 ml-2">
             <li>When you delete your account, we remove or anonymise your profile within 30 days.</li>
             <li>Your profile, photos, and messages will immediately stop being visible to other members.</li>
-            <li>We may keep certain records (such as transaction history or reports of Terms violations) strictly for legal, accounting, security, and dispute-resolution purposes, as required by law.</li>
+            <li>We may keep certain records (such as transaction history and reports of Terms violations) strictly for legal, accounting, security and dispute-resolution purposes, as required by law. Transaction records are kept for up to [RETENTION PERIOD, e.g. X years] and reports of Terms violations for up to [RETENTION PERIOD]. After this period they are deleted or anonymised.</li>
           </ul>
+
+          <div className="grid sm:grid-cols-2 gap-6 mt-6 pt-6 border-t border-foreground/5">
+            <div>
+              <h3 className="font-semibold text-foreground text-sm uppercase tracking-wider mb-2">Data we delete</h3>
+              <p className="text-foreground/70 text-sm font-light leading-relaxed">
+                Profile details, photos, selfie verification data, messages, shortlist and proposals, and preferences.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground text-sm uppercase tracking-wider mb-2">Data we keep for the periods above</h3>
+              <p className="text-foreground/70 text-sm font-light leading-relaxed">
+                Payment and transaction records and reports of Terms violations.
+              </p>
+            </div>
+          </div>
 
           <div className="border-t pt-12 mt-12">
             <h2 className="text-2xl font-bold mb-4">Data Deletion Request Form</h2>

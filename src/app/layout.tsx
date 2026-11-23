@@ -55,7 +55,7 @@ export default function RootLayout({
               <a href="/contact" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">Contact</a>
             </nav>
             <div className="flex items-center gap-4">
-              {siteConfig.appLive && siteConfig.playStoreUrl ? (
+              {siteConfig.appLive && siteConfig.playStoreUrl && (
                 <a
                   href={siteConfig.playStoreUrl}
                   target="_blank"
@@ -64,10 +64,6 @@ export default function RootLayout({
                 >
                   Download App
                 </a>
-              ) : (
-                <span className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase bg-brand-gold/20 text-brand-text border border-brand-gold/40">
-                  App Under Development
-                </span>
               )}
             </div>
           </div>
@@ -93,15 +89,16 @@ export default function RootLayout({
               <h3 className="font-sans text-sm font-semibold tracking-widest uppercase mb-6 text-foreground/80">Company</h3>
               <ul className="space-y-4 text-sm font-light text-foreground/60">
                 <li><a href="/about-us" className="hover:text-brand-text transition-colors duration-300">About Us</a></li>
-                <li><a href="/contact" className="hover:text-brand-text transition-colors duration-300">Contact Us</a></li>
+                <li><a href="/contact" className="hover:text-brand-text transition-colors duration-300">Contact</a></li>
                 <li><a href="/faq" className="hover:text-brand-text transition-colors duration-300">Frequently Asked Questions</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-sans text-sm font-semibold tracking-widest uppercase mb-6 text-foreground/80">Legal & Policies</h3>
               <ul className="space-y-4 text-sm font-light text-foreground/60">
+                <li><a href="/privacy" className="hover:text-brand-text transition-colors duration-300">Privacy Policy</a></li>
+                <li><a href="/eula" className="hover:text-brand-text transition-colors duration-300">Terms of Use (EULA)</a></li>
                 <li><a href="/terms-and-conditions" className="hover:text-brand-text transition-colors duration-300">Terms & Conditions</a></li>
-                <li><a href="/privacy-policy" className="hover:text-brand-text transition-colors duration-300">Privacy Policy</a></li>
                 <li><a href="/refund-and-cancellation-policy" className="hover:text-brand-text transition-colors duration-300">Refund & Cancellation Policy</a></li>
                 <li><a href="/shipping-and-delivery" className="hover:text-brand-text transition-colors duration-300">Shipping & Delivery Policy</a></li>
               </ul>
@@ -141,13 +138,20 @@ export default function RootLayout({
 
           <div className="container mx-auto px-6 lg:px-12 mt-10 pt-6 border-t border-foreground/[0.03] text-sm text-foreground/40 font-light flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col gap-2 md:gap-1 text-center md:text-left">
-              <span>&copy; 2026 {siteConfig.legalName}. All rights reserved.</span>
+              <span>&copy; 2026 {siteConfig.legalName}</span>
               <span>
                 Managed and developed by{' '}
                 <a href="https://www.zartek.in/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-text transition-colors underline decoration-foreground/20 underline-offset-2">
                   Zartek Technologies
                 </a>
               </span>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-foreground/60">
+              <a href="/privacy" className="hover:text-brand-text transition-colors duration-300">Privacy Policy</a>
+              <span className="text-foreground/20">•</span>
+              <a href="/eula" className="hover:text-brand-text transition-colors duration-300">Terms of Use (EULA)</a>
+              <span className="text-foreground/20">•</span>
+              <a href="/contact" className="hover:text-brand-text transition-colors duration-300">Contact</a>
             </div>
           </div>
         </footer>
