@@ -30,7 +30,7 @@ export const siteConfig = {
   llpNumber: "ADB-2543",
   grievanceOfficer: "Mithilaj Abdul",
   appLive: false,
-  playStoreUrl: "",
+  playStoreUrl: "https://play.google.com/store/apps/details?id=com.miaga.mohabbath",
   appStoreUrl: "",
   websiteUrl: "https://www.mohabbathmatrimony.com",
   taxNote: "[TAX_NOTE]", // e.g., "Inclusive of all taxes" or "Plus applicable taxes"

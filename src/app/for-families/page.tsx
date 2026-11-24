@@ -45,7 +45,7 @@ export default function ForFamilies() {
           <p className="mb-8 text-white/80 max-w-xl mx-auto">
             Mohabbath provides an alliance platform rooted in faith, cultural values, and privacy for Muslim families.
           </p>
-          {siteConfig.appLive && siteConfig.playStoreUrl ? (
+          {siteConfig.playStoreUrl ? (
             <a
               href={siteConfig.playStoreUrl}
               target="_blank"

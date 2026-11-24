@@ -55,7 +55,7 @@ export default function RootLayout({
               <a href="/contact" className="text-sm font-medium tracking-wide text-foreground/70 hover:text-brand-text transition-colors duration-300">Contact</a>
             </nav>
             <div className="flex items-center gap-4">
-              {siteConfig.appLive && siteConfig.playStoreUrl && (
+              {siteConfig.playStoreUrl && (
                 <a
                   href={siteConfig.playStoreUrl}
                   target="_blank"

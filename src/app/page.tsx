@@ -47,7 +47,7 @@ export default function Home() {
             </p>
 
             <div className="fade-in-up delay-300 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center">
-              {siteConfig.appLive && siteConfig.playStoreUrl ? (
+              {siteConfig.playStoreUrl ? (
                 <a href={siteConfig.playStoreUrl} target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center bg-gold-gradient text-black px-10 py-4 rounded-full font-medium tracking-widest text-sm uppercase transition-all duration-700 hover:shadow-[0_0_40px_rgba(254,238,140,0.35)] hover:-translate-y-1">
                   Get the App
                 </a>
@@ -171,10 +171,10 @@ export default function Home() {
             Begin Your <br/> <span className="italic font-light text-brand-gold">Beautiful Story.</span>
           </h2>
           <p className="text-xl text-white/60 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
-            Mohabbath mobile applications are currently under development for Android and iOS. Built for families seeking compatible marriage alliances with dignity, privacy, and trust.
+            Download Mohabbath on Android or stay tuned as our iOS version is under development. Built for families seeking compatible marriage alliances with dignity, privacy, and trust.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            {siteConfig.appLive && siteConfig.appStoreUrl ? (
+            {siteConfig.appStoreUrl ? (
               <a
                 href={siteConfig.appStoreUrl}
                 target="_blank"
@@ -189,12 +189,12 @@ export default function Home() {
               </span>
             )}
 
-            {siteConfig.appLive && siteConfig.playStoreUrl ? (
+            {siteConfig.playStoreUrl ? (
               <a
                 href={siteConfig.playStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-transparent border border-white/20 text-white px-14 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:bg-white/5 transition-all duration-700"
+                className="w-full sm:w-auto bg-transparent border border-white/20 text-white px-14 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:bg-white/5 transition-all duration-700 inline-flex items-center justify-center"
               >
                 Google Play
               </a>
