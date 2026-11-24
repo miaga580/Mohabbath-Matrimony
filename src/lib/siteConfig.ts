@@ -32,6 +32,7 @@ export const siteConfig = {
   appLive: false,
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.miaga.mohabbath",
   appStoreUrl: "",
+  formspreeUrl: "https://formspree.io/f/xzerkwye",
   websiteUrl: "https://www.mohabbathmatrimony.com",
   taxNote: "[TAX_NOTE]", // e.g., "Inclusive of all taxes" or "Plus applicable taxes"
   pricingNote:

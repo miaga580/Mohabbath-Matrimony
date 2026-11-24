@@ -5,6 +5,8 @@ import { siteConfig } from '@/lib/siteConfig';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -12,18 +14,40 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Contact Form Enquiry from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Full Name: ${formData.name}\n` +
-      `Registered Mobile: ${formData.mobile}\n` +
-      `Email Address: ${formData.email}\n\n` +
-      `Message:\n${formData.message}`
-    );
-    // Open email client with pre-filled content to info@mohabbathmatrimony.com
-    window.location.href = `mailto:${siteConfig.supportEmail}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMsg('');
+
+    try {
+      const response = await fetch(siteConfig.formspreeUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          mobile: formData.mobile,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await response.json().catch(() => ({}));
+        setErrorMsg(
+          data?.errors?.map((err: { message: string }) => err.message).join(', ') ||
+          'Failed to send message. Please try again or email us directly.'
+        );
+      }
+    } catch {
+      setErrorMsg('Network error. Please try again or email us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -106,7 +130,7 @@ export default function Contact() {
                 </div>
                 <h3 className="font-serif text-2xl font-medium text-brand-text">Thank You</h3>
                 <p className="text-foreground/70 text-sm font-light leading-relaxed">
-                  Your email client has been opened with your enquiry pre-filled to <span className="font-medium text-brand-text">{siteConfig.supportEmail}</span>. Once sent, our team will review and reply within 2 working days.
+                  Your message has been sent successfully to our team. We will review and reply within 2 working days.
                 </p>
                 <button
                   type="button"
@@ -121,6 +145,11 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {errorMsg && (
+                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm">
+                    {errorMsg}
+                  </div>
+                )}
                 <div>
                   <label htmlFor="name" className="block text-sm font-light text-foreground/80 mb-2 tracking-wide">
                     Full Name <span className="text-red-500">*</span>
@@ -183,9 +212,10 @@ export default function Contact() {
                 
                 <button
                   type="submit"
-                  className="w-full bg-foreground text-background px-8 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:bg-brand-text hover:text-white transition-all duration-500 transform hover:-translate-y-1 mt-4"
+                  disabled={loading}
+                  className="w-full bg-foreground text-background px-8 py-5 rounded-full font-medium tracking-widest uppercase text-sm hover:bg-brand-text hover:text-white transition-all duration-500 transform hover:-translate-y-1 mt-4 disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
